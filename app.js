@@ -1,14 +1,20 @@
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const methodOverride = require('method-override');
+const path = require('path');
 
 const app = express();
 
-const indexRouter = require('./routes/index');
+const clucksRouter = require('./routes/clucks');
 const loginRouter = require('./routes/login');
+
+app.use(express.urlencoded({extended:true}));
+const pathToStaticAssets=path.join(__dirname,'public')
+app.use(express.static(pathToStaticAssets));
 
 app.set('view engine', 'ejs');
 app.set('views');
+app.set('public');
 
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride((req, res) => {
@@ -19,16 +25,13 @@ app.use(methodOverride((req, res) => {
 
 app.use(cookieParser());
 
-app.use('/index', indexRouter);
-app.use('/', loginRouter);
 app.use('/', (request, response, next) => {
     response.locals.user_name = request.cookies.user
     next();
 })
 
-app.get('/', (request, response) => {
-    response.render('welcome');
-});
+app.use('/clucks', clucksRouter);
+app.use('/', loginRouter);
 
 
 
