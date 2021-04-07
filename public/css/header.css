@@ -1,0 +1,69 @@
+@import url('reset.css');
+
+
+body {
+    min-width: 720px;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    height: 67px;
+    min-width: 720px;
+    align-items: center;
+    justify-content: flex-end;
+    border-bottom: thin grey;
+}
+.chick-img {
+    display: flex;
+    height: 70%;
+    width: 10%;
+    text-align: center;
+}
+.inner-navbar-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 90%;
+    min-width: 648;
+}
+.button {
+    background-color: gray;
+    color: white;
+    height: 50px;
+    width: 120px;
+    border-radius: 7px;
+    font-weight: bold;
+    font-size: 20px;
+}
+.nav-items {
+    margin-right: 20px;
+    line-height: 1.4em;
+}
+.welcome-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 200px;
+    line-height: 2em;
+}
+.welcome-content>h1 {
+    display: block;
+    justify-content: center;
+}
+.clucks-new-outer-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 20px;    
+}
+.clucks-new-inner-container>form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid grey;
+    border-radius: 5px;
+}

@@ -1,0 +1,27 @@
+<header>
+    <div class="navbar">
+        <a href="/clucks"><img class="chick-img" src="http://www.downloadclipart.net/large/3189-cartoon-chicken-design.png"/></a>
+        <div class='inner-navbar-container'>
+            <div class="nav-items">
+                <a href="/clucks/new"><button type="submit" class='button'>Cluck!</button></a>
+            </div>
+
+            <% if (!user_name) { %> 
+                <div class="nav-items">
+                    <a href="/login"><button type="submit" class='button'>Sign In</button></a>
+                </div>
+            <% } else { %> 
+                <div class="nav-items">
+                    Signed in as: <br>
+                    <b><%= user_name %></b> 
+                </div>
+                <div class="nav-items">
+                    <form action="/login" method="POST">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <input class="button" type="submit" value="log out">
+                    </form>
+                </div>
+            <% } %> 
+        </div>
+    </div>
+</header>

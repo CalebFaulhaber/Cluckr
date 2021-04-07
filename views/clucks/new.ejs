@@ -1,0 +1,15 @@
+<%- include('../partials/header') %>
+<div class="clucks-new-outer-container">
+    <div class="clucks-new-inner-container">
+        <form action="/clucks" method="POST">
+            <label>Content</label>
+            <textarea name="content"></textarea>
+
+            <label>Image Url</label>
+            <input type="text" name="image_url">
+
+            <input type="submit" class="button" value="Cluck!">
+        </form>
+    </div>
+</div>
+<% include('../partials/footer') %>
